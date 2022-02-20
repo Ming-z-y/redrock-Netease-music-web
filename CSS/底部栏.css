@@ -1,0 +1,456 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#app-bottom-bac {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  background: url(../IMG/playbar.png);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  display: flex;
+}
+#app-right-lock {
+  position: absolute;
+  top: -14px;
+  right: 15px;
+  width: 50px;
+  height: 67px;
+  background: url(../IMG/playbar.png) no-repeat;
+  background-position: 0 -380px;
+}
+#app-right-null {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 15px;
+  height: 54px;
+  background: url(../IMG/playbar.png) no-repeat;
+  background-position: -52px -393px;
+}
+#app-bottom-left {
+  height: 53px;
+  margin-right: 67px;
+  background-color: #2979c7;
+}
+#app-bottom-middle {
+  margin: 0 auto;
+  position: absolute;
+  top: 0px;
+  width: 980px;
+  height: 45px;
+  background: url(../IMG/playbar.png);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  left: 50%;
+  margin-left: -498.5px;
+  display: flex;
+  flex-direction: row;
+}
+#btns {
+  width: 137px;
+  height: 36px;
+  /* background-color: #242424; */
+  padding-top: 6px;
+}
+#app-bottom-img {
+  width: 34px;
+  height: 34px;
+  margin: 10px 15px 0 0;
+  background-color: #0c73c2;
+}
+#app-bottom-img img {
+  width: 34px;
+  height: 34px;
+}
+#play {
+  width: 581px;
+  height: 37px;
+  background-color: #323131;
+  margin-top: 10px;
+}
+#play-top-words {
+  width: 581px;
+  height: 22px;
+  color: #e8e8e8;
+  text-shadow: 0 1px 0 #171717;
+}
+#play-top-words a {
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+#play-bar {
+  width: 550px;
+  height: 9px;
+  border-radius: 5px;
+  position: relative;
+}
+#bar-left {
+  width: 466px;
+  height: 9px;
+  border-radius: 5px;
+  background-color: #535353;
+}
+#bar-time {
+  position: absolute;
+  width: 70.075px;
+  height: 13.6px;
+  background-color: #2e2e2e;
+  color: #fff;
+  font-size: 12px;
+  margin-top: -10px;
+  display: block;
+  right: 0;
+}
+#bar-done {
+  height: 9px;
+  background-color: #c70c0c;
+  position: absolute;
+  border-radius: 5px;
+  width: 0;
+}
+#jindutiao-btn {
+  display: block;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  width: 22px;
+  height: 24px;
+  background: url(../IMG/播放键.png);
+  background-position: 0 -250px;
+  cursor: pointer;
+}
+#jindutiao-btn i {
+  visibility: hidden;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 12px;
+  height: 12px;
+  background: url(../IMG/loading.gif);
+}
+#tianjia {
+  width: 87px;
+  height: 36px;
+  /* background-color: #9aaeac; */
+  margin-top: 10px;
+}
+.tianjia-function {
+  display: block;
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin: 5px 2px 0 0;
+}
+.tianjia-function:nth-child(1) {
+  background: url(../IMG/画中画歌词.png) no-repeat 0 0;
+}
+.tianjia-function:nth-child(2) {
+  background: url(../IMG/playbar.png) no-repeat -88px -163px;
+}
+.tianjia-function:nth-child(3) {
+  background: url(../IMG/playbar.png) no-repeat -114px -163px;
+}
+#app-bottom-liebiao {
+  width: 113px;
+  height: 36px;
+  padding-left: 13px;
+  background-color: #b8a6a5;
+  margin-top: 10px;
+}
+.right-function {
+  display: block;
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin: 15px 2px 0 0;
+  cursor: pointer;
+}
+.right-function:nth-child(1) {
+  background: url(../IMG/playbar.png) no-repeat -2px -248px;
+}
+.right-function:nth-child(2) {
+  background: url(../IMG/playbar.png) no-repeat -3px -344px;
+}
+#playlist-mi {
+  width: 59px;
+  height: 36px;
+  display: block;
+  float: left;
+  margin-top: 10px;
+}
+#playlist-mi a {
+  font-size: 12px;
+  text-decoration: none;
+  display: block;
+  width: 38px;
+  height: 25px;
+  margin-top: 4px;
+  padding-left: 21px;
+  line-height: 27px;
+  text-align: center;
+  color: #666;
+  text-shadow: 0 1px 0 #080707;
+  background: url(../IMG/playbar.png) -42px -68px;
+}
+#volumn-detailed {
+  width: 32px;
+  height: 113px;
+  background-color: #292929;
+  position: absolute;
+  bottom: 38px;
+  right: 100px;
+  display: none;
+}
+#volumn-total-progress-bar {
+  width: 4px;
+  height: 93px;
+  background-color: #191919;
+  position: absolute;
+  left: 13px;
+  top: 10px;
+  border-radius: 5px;
+}
+#volumn-done-bar {
+  background-color: #c10b0b;
+  width: 4px;
+  position: absolute;
+  bottom: 0;
+  height: 15%;
+  border-radius: 5px;
+}
+#volumn-icon {
+  display: block;
+  width: 18px;
+  height: 20px;
+  position: absolute;
+  right: -7px;
+  top: -10px;
+  background: url(../IMG/播放键.png) -40px -250px;
+}
+#btns .preA {
+  width: 28px;
+  height: 28px;
+  margin: 5px 8px 0 0;
+  background: url(../IMG/playbar.png) no-repeat;
+  background-position: 0 -130px;
+  display: block;
+  float: left;
+}
+.playA {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  background: url(../IMG/playbar.png);
+  background-position: 0 -204px;
+  display: block;
+  float: left;
+}
+.playA.active {
+  background-position: 0 -165px !important;
+}
+#btns .nextA {
+  width: 28px;
+  height: 28px;
+  margin: 5px 8px 0 0;
+  background: url(../IMG/playbar.png) no-repeat;
+  background-position: -80px -130px;
+  display: block;
+  float: left;
+}
+#playlist-detailed {
+  width: 986px;
+  height: 301px;
+  background-color: #a39a9a;
+  position: absolute;
+  bottom: 43px;
+  left: 50%;
+  margin-left: -500px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: none;
+}
+#playlist-detailed-top {
+  width: 976px;
+  height: 41px;
+  padding: 0 5px 0 5px;
+  background-color: #1f1f1f;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#playlist-top {
+  width: 976px;
+  height: 40px;
+  position: relative;
+}
+#playlist-top h4 {
+  position: absolute;
+  left: 25px;
+  top: 0;
+  line-height: 39px;
+  font-size: 14px;
+  color: #e2e2e2;
+}
+#playlist-top a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 12px;
+}
+.playlist-collect-all {
+  position: absolute;
+  left: 398px;
+  top: 12px;
+  height: 15px;
+  line-height: 15px;
+}
+.line {
+  position: absolute;
+  top: 13px;
+  left: 477px;
+  height: 15px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #2c2c2c;
+}
+.clear {
+  position: absolute;
+  left: 490px;
+  top: 12px;
+  height: 15px;
+  line-height: 15px;
+  cursor: pointer;
+}
+#playlist-top p {
+  position: absolute;
+  left: 595px;
+  top: 0;
+  width: 346px;
+  text-align: center;
+  height: 39px;
+  line-height: 39px;
+  color: #fff;
+  font-size: 14px;
+}
+.close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  text-indent: -999px;
+  cursor: pointer;
+  background: url(../IMG/playlist.png);
+  background-position: -195px 9px;
+}
+#playlist-detailed-bottom {
+  width: 976px;
+  height: 260px;
+  padding: 0 5px 0 5px;
+  background: url(../IMG/playlist_bg.png) -1014px 0;
+  background-repeat: repeat-y;
+  display: flex;
+  flex-direction: row;
+}
+#playlist-detailed-bottom-left {
+  width: 559px;
+  height: 260px;
+  background-color: #0c73c2;
+  display: flex;
+  flex-direction: row;
+}
+#playlist-detailed-bottom-left-content {
+  width: 553px;
+  height: 260px;
+  background-color: #1f1f1f;
+  overflow: scroll;
+}
+#playlist-detailed-bottom-left-content::-webkit-scrollbar {
+  width: 4px;
+}
+/* 滚动槽的样式设置 */
+#playlist-detailed-bottom-left-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
+}
+/* 滚动条滑块的样式设置 */
+#playlist-detailed-bottom-left-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgba(39, 167, 148);
+}
+#playlist-detailed-bottom-left-content::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4);
+}
+#playlist-detailed-bottom-left-hualun {
+  width: 6px;
+  height: 260px;
+  background-color: #0b0c0c;
+}
+#playlist-detailed-bottom-right {
+  width: 422px;
+  height: 250px;
+  background-color: #292929;
+  display: flex;
+  flex-direction: row;
+}
+#playlist-geciBox {
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  overflow: scroll;
+  width: 419px;
+  height: 260px;
+}
+
+#playlist-geciBox::-webkit-scrollbar {
+  width: 4px;
+}
+/* 滚动槽的样式设置 */
+#playlist-geciBox::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
+}
+/* 滚动条滑块的样式设置 */
+#playlist-geciBox::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgba(39, 167, 148);
+}
+#playlist-geciBox::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+#playlist-detailed-bottom-right-content {
+  width: 419px;
+  height: 250px;
+  background-color: #242424;
+}
+#playlist-detailed-bottom-right-hualun {
+  width: 6px;
+  height: 250px;
+  background-color: #171413;
+  position: relative;
+}
+#playlist-detailed-bottom-right-hualun span {
+  width: 6px;
+  height: 36.313px;
+  position: absolute;
+  top: 0;
+  background-color: #414141;
+  border-radius: 2px;
+}
+#tip {
+  position: absolute;
+  top: -51px;
+  left: 850px;
+  clear: both;
+  width: 152px;
+  height: 49px;
+  background: url(../IMG/playbar.png);
+  background-position: 0 -287px;
+  text-align: center;
+  color: #fff;
+  line-height: 37px;
+  font-size: 12px;
+  display: none;
+}

@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f5f5f5;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+  /*height: 4px;*/
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+#topBox {
+  width: 100%;
+  height: 85px;
+  background-color: #242424;
+  position: relative;
+}
+#topBox-one {
+  width: 1100px;
+  height: 70px;
+  margin: 0 auto;
+  background-color: #242424;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+#logo {
+  width: 157px;
+  height: 70px;
+  /* padding-right: 20px; */
+  background-color: #242424;
+}
+#logo a img {
+  width: 157px;
+  height: 69px;
+}
+#nav {
+  width: 520px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  line-height: 70px;
+  text-align: center;
+  justify-content: space-between;
+}
+#nav div:hover {
+  background-color: #000000;
+  color: #fff;
+}
+.nav-A {
+  text-decoration: none;
+  color: #cccccc;
+  font-size: 14px;
+}
+.nav-A:hover {
+  color: #fff;
+}
+.nav-A.active {
+  color: #fff;
+}
+#nav-1 {
+  width: 98px;
+  height: 70px;
+  background-color: #000;
+}
+#nav-2 {
+  width: 98px;
+  height: 70px;
+  background-color: #242424;
+}
+#nav-3 {
+  width: 70px;
+  height: 70px;
+  background-color: #242424;
+}
+#nav-4 {
+  width: 70px;
+  height: 70px;
+  background-color: #242424;
+}
+#nav-5 {
+  width: 80px;
+  height: 70px;
+  background-color: #242424;
+}
+#nav-6 {
+  width: 108px;
+  height: 70px;
+  background-color: #242424;
+}
+#search {
+  width: 158px;
+  height: 32px;
+  position: relative;
+}
+#search-icon {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 27px;
+  left: 95px;
+  z-index: 10000;
+}
+#search-icon img {
+  width: 18px;
+  height: 18px;
+}
+#search input {
+  position: absolute;
+  left: 88px;
+  top: 19px;
+  width: 128px;
+  height: 32px;
+  border-radius: 15px;
+  padding-left: 30px;
+  border: none;
+  outline: none;
+}
+#search input::-webkit-input-placeholder {
+  font-size: 12px;
+}
+#chuangzuozhezhongxin {
+  width: 88px;
+  height: 30px;
+  color: #cccccc;
+  border: 1px solid #4f4f4f;
+  border-radius: 20px;
+  font-size: 12px;
+  position: absolute;
+  right: 70px;
+  top: 18px;
+  line-height: 30px;
+  text-align: center;
+}
+#chuangzuozhezhongxin:hover {
+  color: #fff;
+  border-color: #fff;
+}
+#log {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  color: #787878;
+  font-size: 12px;
+  width: 28px;
+  height: 45px;
+}
+#log a {
+  text-decoration: none;
+  color: #787878;
+}
+#log:hover a {
+  color: #cccccc;
+}
+#log-A:hover {
+  text-decoration: underline;
+}
+#topBox-two {
+  width: 100%;
+  height: 15px;
+  background-color: #c20c0c;
+}
+#search-bac {
+  width: 980px;
+  height: 1088px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  border-width: 0 1px;
+}
+#search-content {
+  width: 900px;
+  height: 1008px;
+  padding: 40px;
+}
+#search-content-top {
+  width: 420px;
+  height: 40px;
+  margin: 0 auto;
+  border: 1px solid #b6b6b6;
+  border-radius: 5px;
+}
+#search-content-input {
+  width: 320px;
+  height: 17px;
+  margin-top: 12px;
+  margin-left: 20px;
+  border: none;
+}
+#search-content-input:focus {
+  outline: none;
+  border: none;
+}
+#search-A {
+  width: 40px;
+  height: 40px;
+}
+#search-content-btn {
+  width: 40px;
+  height: 40px;
+  float: right;
+  border-radius: 5px;
+  border: none;
+  border-left: #b6b6b6 1px solid;
+  cursor: pointer;
+}
+#search-content-btn:hover {
+  background-color: #fcfcfc;
+}
+#search-content-btn img {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
+#search-top {
+  width: 900px;
+  height: 16px;
+  margin-top: 28px;
+  margin-bottom: 17px;
+  color: #999999;
+  font-size: 12px;
+}
+#search-content-middle {
+  width: 900px;
+  height: 940px;
+}
+#search-index {
+  width: 898px;
+  height: 39px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+}
+.search-index-nu {
+  width: 112.25px;
+  height: 37px;
+  border-top: 2px #cccccc solid;
+  padding-right: 2px;
+  line-height: 37px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+.search-index-nu:nth-child(1) {
+  border-top: 2px solid #d13030;
+  border-bottom: 1px #fff solid;
+}
+.search-index-nu:hover {
+  border-top: 2px solid #d13030;
+}
+#search-content-inner {
+  width: 900px;
+  height: 848px;
+  margin-top: 20px;
+  font-size: 12px;
+}
+#search-inner {
+  width: 900px;
+  height: 848px;
+}
+.search-song {
+  width: 870px;
+  height: 22.4px;
+  padding: 10px 10px 8px 18px;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: row;
+}
+.search-song:hover {
+  border: 2px solid #e1e1e1;
+}
+.even {
+  background-color: #f7f7f7;
+}
+.song-img {
+  width: 15px;
+  height: 15px;
+}
+.song-img a {
+  display: block;
+  width: 17px;
+  height: 17px;
+  background: url(../IMG/table.png) no-repeat;
+  background-position: 0 -103px;
+}
+.song-name {
+  width: 370px;
+  height: 22.4px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+}
+.song-name a {
+  text-decoration: none;
+  color: #000;
+}
+.song-name a:hover {
+  text-decoration: underline;
+}
+.text {
+  height: 20px;
+  padding-right: 25px;
+}
+.mv-a {
+  display: block;
+  width: 23px;
+  height: 17px;
+  background: url(../IMG/table.png) no-repeat;
+  background-position: 0 -151px;
+}
+.song-null {
+  width: 96px;
+  height: 16.087px;
+  margin-right: 5px;
+  visibility: hidden;
+}
+.song-null a {
+  float: left;
+  display: block;
+}
+.song-null a:nth-child(1) {
+  width: 13px;
+  height: 13px;
+  background: url(../IMG/icon.png);
+  background-position: 0 -700px;
+  margin-right: 8px;
+}
+.song-null a:nth-child(2) {
+  width: 18px;
+  height: 16px;
+  background: url(../IMG/table.png);
+  background-position: 0 -174px;
+  margin-right: 7px;
+}
+.song-null a:nth-child(3) {
+  width: 18px;
+  height: 16px;
+  background: url(../IMG/table.png);
+  background-position: 0 -195px;
+  margin-right: 7px;
+}
+.song-null a:nth-child(4) {
+  width: 18px;
+  height: 16px;
+  background: url(../IMG/table.png);
+  background-position: -81px -174px;
+  margin-right: 7px;
+}
+.song-singer {
+  width: 130.5px;
+  height: 13.6px;
+  margin-right: 12px;
+}
+.song-resource {
+  width: 156.6px;
+  height: 16px;
+  margin-right: 12px;
+  overflow: hidden;
+}
+.song-time {
+  width: 30.038px;
+  height: 13.6px;
+  margin-right: 5px;
+}
+iframe {
+  width: 100%;
+  height: 351px;
+  position: fixed;
+  bottom: 0px;
+}

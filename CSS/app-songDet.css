@@ -1,0 +1,564 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+  /*height: 4px;*/
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  text-decoration: underline;
+}
+li {
+  list-style: none;
+}
+body {
+  background-color: #f5f5f5;
+  font-size: 12px;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+iframe {
+  width: 100%;
+  height: 105px;
+}
+#big-bac {
+  width: 980px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+}
+#bigBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#bixBox-left {
+  width: 709px;
+}
+#bigBox-left-content {
+  padding: 47px 30px 40px 39px;
+}
+#songDet {
+  width: 640px;
+  height: auto;
+  margin-top: -10px;
+}
+#songDet-main {
+  width: 640px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+#songDet-main-left {
+  width: 206px;
+  height: 234px;
+}
+#songDet-main-img {
+  width: 210px;
+  height: 210px;
+  background: url(../IMG/coverall.png) no-repeat;
+  background-position: -140px -580px;
+}
+#songDet-main-img img {
+  width: 130px;
+  height: 130px;
+  margin-top: 38px;
+  margin-left: 38px;
+}
+#songDet-main-left-bottom {
+  margin: 20px 0 0 46px;
+  position: relative;
+}
+#songDet-main-left-bottom i {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(../IMG/icon.png);
+  background-position: -34px -863px;
+}
+#songDet-main-left-bottom a {
+  text-decoration: underline;
+  color: #0c73c2;
+  display: inline-block;
+  height: 13.6px;
+  position: absolute;
+  top: 0;
+}
+#songDet-main-right {
+  width: 414px;
+  height: auto;
+}
+#songDet-main-right {
+  position: relative;
+}
+#songDet-title {
+  height: 32px;
+}
+#songDet-title i {
+  display: block;
+  float: left;
+  background: url(../IMG/icon.png);
+  width: 54px;
+  height: 24px;
+  background-position: 0 -463px;
+}
+#songDet-title-name {
+  width: 350px;
+  height: 32px;
+  margin-left: 64px;
+  font-size: 24px;
+  position: absolute;
+  top: 0px;
+}
+.songDet-singer {
+  margin: 10px 0;
+}
+#songDet-info {
+  width: 414px;
+  height: 31px;
+}
+#songDet-info a {
+  display: block;
+  float: left;
+}
+.songDet-info-1 {
+  width: 66px;
+  height: 31px;
+  padding-right: 5px;
+  background: url(../IMG/button2.png);
+  background-position: right -428px;
+}
+.songDet-info-1 i {
+  display: block;
+  width: 61px;
+  height: 31px;
+  background: url(../IMG/button2.png);
+  background-position: 0 -387px;
+  color: #fff;
+  padding: 0 4px 0 0;
+  line-height: 31px;
+  text-align: center;
+}
+.songDet-info-1 em {
+  display: block;
+  float: left;
+  width: 20px;
+  height: 18px;
+  margin: 6px 2px 2px 5px;
+  background: url(../IMG/button2.png);
+  background-position: 0 -1622px;
+  overflow: hidden;
+}
+.songDet-info-2 {
+  width: 31px;
+  height: 31px;
+  margin-right: 5px;
+  background: url(../IMG/button2.png);
+  background-position: 0 -1588px;
+  margin-left: -3px;
+}
+.songDet-info-3 {
+  width: 54px;
+  height: 31px;
+  padding-right: 5px;
+  background: url(../IMG/button2.png);
+  background-position: right -1020px;
+  margin-right: 6px;
+  line-height: 31px;
+}
+.songDet-info-3 i {
+  display: block;
+  width: 24px;
+  height: 31px;
+  background: url(../IMG/button2.png);
+  background-position: 0 -977px;
+  padding: 0 7px 0 28px;
+}
+.songDet-info-4 {
+  margin-right: 6px;
+  width: 54px;
+  height: 31px;
+  padding-right: 5px;
+  background: url(../IMG/button2.png);
+  background-position: right -1020px;
+  line-height: 31px;
+}
+.songDet-info-4 i {
+  display: block;
+  background: url(../IMG/button2.png);
+  background-position: 0 -1225px;
+  padding-left: 28px;
+  padding-right: 2px;
+  width: 24px;
+  height: 31px;
+}
+.songDet-info-5 {
+  width: 54px;
+  height: 31px;
+  padding-right: 5px;
+  background: url(../IMG/button2.png);
+  margin-right: 6px;
+  background-position: right -1020px;
+  line-height: 31px;
+}
+.songDet-info-5 i {
+  display: block;
+  background: url(../IMG/button2.png);
+  background-position: 0 -2761px;
+  padding-left: 28px;
+  padding-right: 2px;
+  width: 24px;
+  height: 31px;
+}
+.songDet-info-6 {
+  margin-right: 6px;
+  width: 81px;
+  height: 31px;
+  line-height: 31px;
+  padding-right: 5px;
+  margin-right: 6px;
+  background: url(../IMG/button2.png);
+  background-position: right -1020px;
+}
+.songDet-info-6 i {
+  display: block;
+  background: url(../IMG/button2.png);
+  background-position: 0 -1465px;
+  padding-left: 28px;
+  padding-right: 2px;
+  width: 51px;
+  height: 31px;
+}
+#songDet-lyric {
+  width: 150px;
+  height: 304px;
+  margin-top: 38px;
+  line-height: 23px;
+  overflow: hidden;
+}
+#openOC a {
+  color: #0c73c2;
+}
+#openOC a i {
+  display: inline-block;
+  width: 11px;
+  height: 8px;
+}
+.iconOOC {
+  background: url(../IMG/icon.png);
+  background-position: -65px -520px;
+}
+.active {
+  background: url(../IMG/icon.png);
+  background-position: -45px -520px;
+}
+#songDet-bottom {
+  width: 640px;
+  height: 60px;
+  margin-top: 48px;
+}
+#comment-box {
+  margin-top: 40px;
+}
+#comment-title {
+  width: 640px;
+  height: 33px;
+  border-bottom: 2px solid #c20c0c;
+}
+#comment-title h3 span {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: normal;
+}
+#comment-title h3 {
+  float: left;
+}
+#commentNum {
+  float: left;
+  color: #666;
+  margin: 9px 0 0 20px;
+}
+#comment-content {
+  margin-top: 20px;
+}
+#cbm {
+  width: 640px;
+  height: 98px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+#cbm-img {
+  width: 50px;
+  height: 50px;
+}
+#cbm-img img {
+  width: 50px;
+  height: 50px;
+}
+#cbm-right {
+  width: 578px;
+  height: 98px;
+}
+#cbm-r-f {
+  width: 564px;
+  height: 63px;
+  padding-right: 14px;
+}
+#cbm-r-f textarea {
+  resize: none;
+  width: 564px;
+  height: 50px;
+  margin: 0;
+  padding: 5px 6px 6px;
+  border: 1px solid #cdcdcd;
+  border-radius: 2px;
+  line-height: 19px;
+  box-sizing: content-box;
+}
+#cbm-r-f textarea:focus {
+  outline: none;
+}
+#cmb-r-s {
+  width: 578px;
+  height: 25px;
+  padding-top: 10px;
+}
+#cmb-r-s i {
+  margin-right: 10px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  float: left;
+  cursor: pointer;
+}
+#expression {
+  background: url(../IMG/icon.png);
+  background-position: -40px -490px;
+}
+#at {
+  background: url(../IMG/icon.png);
+  background-position: -60px -490px;
+}
+#cmb-r-s span {
+  color: #666;
+  float: right;
+  display: block;
+  margin-right: 10px;
+  height: 25px;
+  line-height: 25px;
+}
+#smAn {
+  width: 13px;
+  height: 14px;
+  font-size: 15px;
+  position: absolute;
+  top: 11px;
+  left: 55px;
+}
+#smAn em {
+  color: #cdcdcd;
+  font-family: "SimSun";
+  font-style: normal;
+  font-weight: normal;
+  display: block;
+  width: 13px;
+  height: 10px;
+}
+#smAn span {
+  margin: -10px 0 0 1px;
+  display: block;
+  font-family: "SimSun";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  height: 10px;
+  line-height: normal;
+  color: #fff;
+}
+#cmb-r-s a {
+  display: block;
+  color: #ffffff;
+  width: 46px;
+  height: 25px;
+  background: url(../IMG/button.png);
+  background-position: -84px -64px;
+  float: right;
+  text-align: center;
+  line-height: 25px;
+}
+#cmb-r-s a:hover {
+  text-decoration: none;
+  background: none;
+  background-color: #5aa4e9;
+}
+#comment-allBox {
+  margin-top: 10px;
+}
+#WC {
+  height: 20px;
+  border-bottom: 1px solid #cfcfcf;
+  font-size: 12px;
+}
+#NC {
+  height: 20px;
+  border-bottom: 1px solid #cfcfcf;
+  font-size: 12px;
+}
+#bixBox-right {
+  border-left: 2px solid #ececec;
+  border-right: 2px solid #d7d7d7;
+  width: 271px;
+}
+#bixBox-right-content {
+  padding: 20px 40px 40px 30px;
+}
+#bixBox-right-content h3 {
+  height: 23px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  font-size: 12px;
+}
+#involved-songList-content {
+  margin-bottom: 25px;
+}
+#involved-songList-content li {
+  width: 200px;
+  height: 50px;
+  margin-bottom: 15px;
+  line-height: 24px;
+  list-style: none;
+}
+.involvedList-imgBox {
+  margin-right: -60px;
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+.involvedList-imgBox img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.info {
+  margin-left: 60px;
+  line-height: 24px;
+}
+.IL-title {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  width: 140px;
+}
+.info span {
+  color: #999;
+  float: left;
+  font-size: 12px;
+}
+.IL-content {
+  float: left;
+  max-width: 106px;
+  margin: 0 2px 0 4px;
+  color: #666;
+  font-size: 12px;
+}
+#SiSo-content li {
+  list-style: none;
+}
+.f-cb {
+  margin-top: 10px;
+}
+.txt {
+  float: left;
+  width: 156px;
+  line-height: 16px;
+}
+.f-third {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.s-fc4 {
+  color: #999;
+}
+.opr {
+  float: right;
+  margin-top: 10px;
+  line-height: 32px;
+}
+.play {
+  width: 10px;
+  height: 11px;
+  margin-right: 16px;
+  background: url(../IMG/icon2.png) no-repeat;
+  background-position: -69px -455px;
+  display: block;
+  float: left;
+}
+.addto {
+  display: block;
+  float: left;
+  width: 10px;
+  height: 11px;
+  opacity: 0.9;
+  background: url(../IMG/icon2.png) no-repeat;
+  background-position: -87px -454px;
+}
+#download-box {
+  margin: 20px 0;
+  padding-bottom: 20px;
+}
+#download-content {
+  background: url(../IMG/sprite.png);
+  height: 65px;
+  margin-bottom: 10px;
+  background-position: 0 -392px;
+}
+#download-content li {
+  float: left;
+}
+#doImg-1 {
+  display: block;
+  width: 42px;
+  height: 48px;
+  text-indent: -9999px;
+}
+#doImg-2 {
+  display: block;
+  height: 48px;
+  width: 60px;
+  margin: 0 26px 0 30px;
+}
+#doImg-3 {
+  display: block;
+  width: 42px;
+  height: 48px;
+  text-indent: -9999px;
+}
+#download-box p {
+  color: #999;
+}
