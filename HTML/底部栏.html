@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/底部栏.css" />
+  </head>
+  <body>
+    <div id="app-bottom-bac">
+      <div id="app-bottom-left"></div>
+      <div id="app-bottom-right">
+        <div id="app-right-lock"></div>
+        <div id="app-right-null"></div>
+      </div>
+      <div id="app-bottom-middle">
+        <div id="btns">
+          <a
+            href="#"
+            data-action="prev"
+            class="preA"
+            title="上一首"
+            id="ProA"
+          ></a>
+          <a
+            href="#"
+            data-action="play"
+            class="playA"
+            title="播放/暂停"
+            id="PlayA"
+          ></a>
+          <a
+            href="#"
+            data-action="prev"
+            class="nextA"
+            title="下一首"
+            id="NextA"
+          ></a>
+        </div>
+        <div id="app-bottom-img">
+          <a href="#">
+            <img src="../IMG/default_album.jpg" />
+          </a>
+        </div>
+        <div id="play">
+          <div id="play-top-words">
+            <a id="songName"></a>
+            <a id="singerName"></a>
+            <a id="laiYuan"></a>
+          </div>
+          <div id="play-bar">
+            <div id="bar-left">
+              <div id="bar-done">
+                <span id="jindutiao-btn">
+                  <i></i>
+                </span>
+              </div>
+            </div>
+            <span id="bar-time">00:00/00:00</span>
+          </div>
+        </div>
+        <div id="tianjia">
+          <a href="#" class="tianjia-function" title="画中画歌词"></a>
+          <a href="#" class="tianjia-function" title="收藏"></a>
+          <a href="#" class="tianjia-function" title="分享"></a>
+        </div>
+        <div id="app-bottom-right">
+          <a class="right-function" title="音量"></a>
+          <a class="right-function" title="循环"></a>
+          <span id="playlist-mi">
+            <span id="tip">已添加至播放列表</span>
+            <a href="#" title="播放列表" class="playlist-a">0</a>
+          </span>
+          <div id="volumn-detailed">
+            <div id="volumn-total-progress-bar">
+              <div id="volumn-done-bar">
+                <a href="#" id="volumn-icon"> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="playlist-detailed">
+        <div id="playlist-detailed-top">
+          <div id="playlist-top">
+            <h4>播放列表(<em></em>)</h4>
+            <a href="#" class="playlist-collect-all">收藏全部</a>
+            <span class="line"></span>
+            <a href="#" class="clear">清除</a>
+            <p id="song-title"></p>
+            <span class="close">关闭</span>
+          </div>
+        </div>
+        <div id="playlist-detailed-bottom">
+          <div id="playlist-detailed-bottom-left">
+            <div id="playlist-detailed-bottom-left-content">
+              <ul id="songlistUl"></ul>
+            </div>
+            <div id="playlist-detailed-bottom-left-hualun"></div>
+          </div>
+          <div id="playlist-detailed-bottom-right">
+            <div id="playlist-detailed-bottom-right-content">
+              <div id="playlist-geciBox"></div>
+            </div>
+            <div id="playlist-detailed-bottom-right-hualun">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../JS/底部栏.js"></script>
+</html>

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网易云音乐</title>
+    <link rel="shortcut icon" href="../IMG/音乐.ico" />
+    <link rel="stylesheet" href="../CSS/app.css" />
+  </head>
+  <body>
+    <div id="tips">欢迎回来</div>
+    <div id="logOutBox">
+        <ul id="logOut">
+            <li>
+                <a href="javascript:;">
+                    <i></i>
+                    <em>退出登录</em>
+                </a>
+            </li>
+        </ul>
+        <i id="angel"></i>
+    </div>
+    <div id="topBox">
+      <div id="topBox-one">
+        <div id="logo">
+          <a href="#">
+            <img src="../IMG/logo.png" />
+          </a>
+        </div>
+        <div id="nav">
+          <a href="#" class="nav-A active"><sub class="cur"></sub><div id="nav-1">发现音乐</div></a>
+          <a href="#" class="nav-A"><sub class="cur"></sub><div id="nav-2">我的音乐</div></a>
+          <a href="#" class="nav-A"><div id="nav-3">关注</div></a>
+          <a href="#" class="nav-A"><div id="nav-4">商城</div></a>
+          <a href="#" class="nav-A"><div id="nav-5">音乐人</div></a>
+          <a href="#" class="nav-A"><div id="nav-6">下载客户端</div></a>
+        </div>
+        <div id="search">
+            <div id="search-icon"><a href="#" id="search-A"><img src="../IMG/3.2搜索.png"></a></div>
+          <input type="text" placeholder="音乐/视频/电台/用户"  id="search-input"/>
+        </div>
+        <a href="#" id="chuang-A"
+          ><div id="chuangzuozhezhongxin">创作者中心</div></a
+        >
+        <div id="log"><a href="#" id="log-A">登录</a></div>
+        <div id="search-recommend">
+            <p id="search-title">
+                <a href="#" id="search-title-A">搜“<em></em>”相关用户</a>
+            </p>
+            <div id="search-title-content">
+                <div class="itm">
+                    <h3 class="hd">
+                        <img >
+                        <em>单曲</em>
+                    </h3>
+                    <ul class="f-cb"></ul>
+                </div>
+                <div class="itm">
+                    <h3 class="hd">
+                        <img >
+                        <em>歌手</em>
+                    </h3>
+                    <ul class="f-cb odd"></ul>
+                </div>
+                <div class="itm">
+                    <h3 class="hd">
+                        <img >
+                        <em>专辑</em>
+                    </h3>
+                    <ul class="f-cb"></ul>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div id="topBox-two">
+          <div id="topBox-two-inner">
+              <ul id="topbox-nav">
+                  <li> <a href="javascript:;"><em id="topbox-nav-one">推荐</em></a> </li>
+                  <li> <a href="javascript:;"><em id="topbox-nav-two">排行榜</em></a> </li>
+                  <li> <a href="javascript:;"><em id="topbox-nav-three">歌单</em></a></li>
+                  <li> <a href="javascript:;"><em id="topbox-nav-four">直播电台</em></a> </li>
+                  <li> <a href="javascript:;"><em id="topbox-nav-five">歌手</em></a> </li>
+                  <li> <a href="javascript:;"><em id="topbox-nav-six">新碟上架</em></a> </li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <div id="login-in">
+        <div class="login-in-top" id="qrLogin">
+          <div id="qrLogin-in-top-left">登录</div>
+          <div class="login-in-top-right">×</div>
+        </div>
+        <div class="login-in-top" id="phoneLogin">
+            <div id="phoneLogin-in-top-left">手机号登录</div>
+            <div class="login-in-top-right">×</div>
+          </div>
+        <div class="login-in-bottom" id="qr-bottom">
+          <div id="login-in-bottom-top">
+            <div id="login-in-bottom-img"></div>
+            <div id="login-in-bottom-right">
+              <div id="login-in-bottom-right-title">扫码登录</div>
+              <div id="login-in-bottom-right-vrcode"></div>
+              <div id="login-in-bottom-right-p">
+                使用 <a href="#" target: "_blank">网易云音乐APP</a> 扫码登录
+              </div>
+            </div>
+          </div>
+          <div id="login-in-bottom-bottom">选择其他登陆方式</div>
+        </div>
+        <div class="login-in-bottom" id="phone-bottom">
+            <div id="phone-yemian">
+                <div id="login-in-bottom-phone"><input type="text" placeholder="请输入手机号" id="phone"></div>
+                <div id="login-in-bottom-password"> <input type="password" placeholder="请输入密码" id="password"><a href="#">忘记密码？</a></div>
+                <div id="autoLoginBox">
+                    <div id="message-login"><a href="#">短信登录</a></div>
+                    <div id="auto-login"><input type="checkbox" ><p>自动登录</p></div>
+                </div>
+                <div id="login-inPhone">登录</div>
+            </div>
+            <div id="phonelogin-in-bottom-bottom"></div>
+        </div>
+    </div>
+    <div id="firstPage">
+    <div id="banner-bigBox">
+        <div id="banner-box">
+            <ul id="banner-point">
+                <li class="point active"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+            </ul>
+            <div id="goPre"><</div>
+            <div id="goNext">></div>
+            <div class="banner active" id="banner-0"><img  class="banner-img"></div>
+            <div class="banner" id="banner-1"><img  class="banner-img"></div>
+            <div class="banner" id="banner-2"><img  class="banner-img"></div>
+            <div class="banner" id="banner-3"><img  class="banner-img"></div>
+            <div class="banner" id="banner-4"><img  class="banner-img"></div>
+            <div class="banner" id="banner-5"><img  class="banner-img"></div>
+            <div class="banner" id="banner-6"><img  class="banner-img"></div>
+            <div class="banner" id="banner-7"><img  class="banner-img"></div>
+            <div class="banner" id="banner-8"><img  class="banner-img"></div>
+            <div class="banner" id="banner-9"><img  class="banner-img"></div>
+            <div id="download-pc">
+                <a href="#"><button id="downloadBtn"><img src="../IMG/download-btn.png"></button> </a>
+                <p id="download-p">PC 安卓 iPhone WP iPad Mac 六大客户端</p>
+            </div>
+        </div>
+    </div>
+    <div id="bac-second">
+        <div id="bac-second-bigBox">
+            <div id="bac-second-bigBox-left">
+                <div id="bac-second-bigBox-left-inner">
+                    <div id="pr">
+                        <div id="pr-title">
+                            <a href="####" id="pr-bigtitle">热门推荐</a>
+                            <div id="pr-tab">
+                                <a href="#">华语</a>
+                                <span class="line">|</span>
+                                <a href="#">流行</a>
+                                <span class="line">|</span>
+                                <a href="#">摇滚</a>
+                                <span class="line">|</span>
+                                <a href="#">民谣</a>
+                                <span class="line">|</span>
+                                <a href="#">电子</a>
+                            </div>
+                            <div id="pr-more">
+                                <a href="#">更多</a>
+                                <i></i>
+                            </div>
+                        </div>
+                        <ul id="pr-content">
+                            <li>
+                                <div class="pr-content-imgBox">
+                                    <a href="#" class="prImgA"><img class="pr-content-img"></a>
+                                    <div class="pr-content-img-bottom">
+                                        <span class="icon-headset"></span>
+                                        <span class="nb"></span>
+                                        <a href="#" class="begin"></a>
+                                    </div>
+                                </div>
+                                <a href="#" class="pr-contentBoxA"><p class="pr-content-box"></p></a>
+                            </li>
+                            <li>
+                                <div class="pr-content-imgBox">
+                                    <a href="#" class="prImgA"><img class="pr-content-img"></a>
+                                    <div class="pr-content-img-bottom">
+                                        <span class="icon-headset"></span>
+                                        <span class="nb"></span>
+                                        <a href="#" class="begin"></a>
+                                    </div>
+                                </div>
+                                <a href="#" class="pr-contentBoxA"><p class="pr-content-box"></p></a>
+                            </li>
+                            <li>
+                                <div class="pr-content-imgBox">
+                                    <a href="#" class="prImgA"><img class="pr-content-img"></a>
+                                    <div class="pr-content-img-bottom">
+                                        <span class="icon-headset"></span>
+                                        <span class="nb"></span>
+                                        <a href="#" class="begin"></a>
+                                    </div>
+                                </div>
+                                <a href="#" class="pr-contentBoxA"><p class="pr-content-box"></p></a>
+                            </li>
+                            <li>
+                                <div class="pr-content-imgBox">
+                                    <a href="#" class="prImgA"><img class="pr-content-img"></a>
+                                    <div class="pr-content-img-bottom">
+                                        <span class="icon-headset"></span>
+                                        <span class="nb"></span>
+                                        <a href="#" class="begin"></a>
+                                    </div>
+                                </div>
+                                <a href="#" class="pr-contentBoxA"><p class="pr-content-box"></p></a>
+                            </li>
+                            <li>
+                                <div class="pr-content-imgBox">
+                                    <a href="#" class="prImgA"><img class="pr-content-img"></a>
+                                    <div class="pr-content-img-bottom">
+                                        <span class="icon-headset"></span>
+                                        <span class="nb"></span>
+                                        <a href="#" class="begin"></a>
+                                    </div>
+                                </div>
+                                <a href="#" class="pr-contentBoxA"><p class="pr-content-box"></p></a>
+                            </li>
+                            <li>
+                                <div class="pr-content-imgBox">
+                                    <a href="#" class="prImgA"><img class="pr-content-img"></a>
+                                    <div class="pr-content-img-bottom">
+                                        <span class="icon-headset"></span>
+                                        <span class="nb"></span>
+                                        <a href="#" class="begin"></a>
+                                    </div>
+                                </div>
+                                <a href="#" class="pr-contentBoxA"><p class="pr-content-box"></p></a>
+                            </li>
+                            <li>
+                                <div class="pr-content-imgBox">
+                                    <a href="#" class="prImgA"><img class="pr-content-img"></a>
+                                    <div class="pr-content-img-bottom">
+                                        <span class="icon-headset"></span>
+                                        <span class="nb"></span>
+                                        <a href="#" class="begin"></a>
+                                    </div>
+                                </div>
+                                <a href="#" class="pr-contentBoxA"><p class="pr-content-box"></p></a>
+                            </li>
+                            <li>
+                                <div class="pr-content-imgBox">
+                                    <a href="#" class="prImgA"><img class="pr-content-img"></a>
+                                    <div class="pr-content-img-bottom">
+                                        <span class="icon-headset"></span>
+                                        <span class="nb"></span>
+                                        <a href="#" class="begin"></a>
+                                    </div>
+                                </div>
+                                <a href="#" class="pr-contentBoxA"><p class="pr-content-box"></p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="pore"></div>
+                    <div id="nd">
+                        <div id="nd-title">
+                            <a href="###" class="bigtitle">新碟上架</a>
+                            <span>
+                                <a href="###">更多</a>
+                                <i></i>
+                            </span>
+                        </div>
+                        <div id="nd-content">
+                            <div id="nd-content-inner">
+                                <a  id="nd-goPre"><</a>
+                                <div id="nd-content-banner">
+                                    <ul class="nd-content-bannerBox nd01" style="left: -645px;">
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <ul class="nd-content-bannerBox nd02" style="left: 0px;">
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <ul class="nd-content-bannerBox nd03" style="left: 645px;">
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <ul class="nd-content-bannerBox nd04" style="left: 1290px;">
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                        <li class="nd-content-banner-inner">
+                                            <div class="nd-bannerBox">
+                                                <a href="#"><img class="nd-banner-img"></a>
+                                            </div>
+                                            <p class="nd-songName">
+                                                <a href="#"></a>
+                                            </p>
+                                            <p class="nd-singer">
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a  id="nd-goNext">></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mf">
+                        <div id="fm-title">
+                            <a href="###" class="bigtitle">榜单</a>
+                            <span>
+                                <a href="###">更多</a>
+                                <i></i>
+                            </span>
+                        </div>
+                        <div id="fm-content">
+                            <div class="fm-content">
+                                <div class="fm-top">
+                                    <div class="cver">
+                                        <img >
+                                        <a href="javascript:;"></a>
+                                    </div>
+                                    <div class="tit"></div>
+                                </div>
+                                <dd>
+                                    <ol>
+                                        <li>
+                                            <span class="top">1</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="top">2</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="top">3</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>4</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>5</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>6</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>7</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>8</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>9</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="nobottom">10</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                    </ol>
+                                    <div class="more"><a href="#">查看全部></a></div>
+                                </dd>
+                            </div>
+                            <div class="fm-content">
+                                <div class="fm-top"></div>
+                                <dd>
+                                    <ol>
+                                        <li>
+                                            <span class="top">1</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="top">2</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="top">3</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>4</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>5</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>6</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>7</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>8</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>9</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="nobottom">10</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                    </ol>
+                                    <div class="more"><a href="#">查看全部></a></div>
+                                </dd>
+                            </div>
+                            <div class="fm-content">
+                                <div class="fm-top"></div>
+                                <dd>
+                                    <ol>
+                                        <li>
+                                            <span class="top">1</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="top">2</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="top">3</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>4</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>5</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>6</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>7</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>8</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span>9</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                        <li>
+                                            <span class="nobottom">10</span>
+                                            <a href="#"></a>
+                                            <div class="fm-hidden"></div>
+                                        </li>
+                                    </ol>
+                                    <div class="more"><a href="#">查看全部></a></div>
+                                </dd>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bac-second-bigBox-right">
+                <div id="rl">
+                    <p id="rl-p">登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
+                    <button id="rl-btn">用户登录</button>
+                </div>
+                <div id="login-af"></div>
+                <div id="IS">
+                    <div id="IS-title">
+                        <div id="IS-title-left">入驻歌手</div>
+                        <div id="IS-title-right"><a href="#" id="IS-title-right-A">查看全部></a></div>
+                    </div>
+                    <div id="IS-content">
+                        <div class="IS-content-singers">
+                            <div class="IS-imgBox"><img class="IS-img" src="../IMG/张惠妹.jpg"></div>
+                            <div class="IS-infoBox">
+                                <div class="IS-info-top">张惠妹aMEI</div>
+                                <div class="IS-info-bottom">台湾歌手张惠妹</div>
+                            </div>
+                        </div>
+                        <div class="IS-content-singers">
+                            <div class="IS-imgBox"><img class="IS-img" src="../IMG/fine 乐团.jpg"></div>
+                            <div class="IS-infoBox">
+                                <div class="IS-info-top">Fine乐团</div>
+                                <div class="IS-info-bottom">独立音乐人</div>
+                            </div>
+                        </div>
+                        <div class="IS-content-singers">
+                            <div class="IS-imgBox"><img class="IS-img" src="../IMG/王.jpg"></div>
+                            <div class="IS-infoBox">
+                                <div class="IS-info-top">萬曉利</div>
+                                <div class="IS-info-bottom">民谣歌手、中国现代民..</div>
+                            </div>
+                        </div>
+                        <div class="IS-content-singers">
+                            <div class="IS-imgBox"><img class="IS-img" src="../IMG/音乐人赵蕾.jpg"></div>
+                            <div class="IS-infoBox">
+                                <div class="IS-info-top">音乐人赵雷</div>
+                                <div class="IS-info-bottom">民谣歌手</div>
+                            </div>
+                        </div>
+                        <div class="IS-content-singers">
+                            <div class="IS-imgBox"><img class="IS-img" src="../IMG/王三博.jpg"></div>
+                            <div class="IS-infoBox">
+                                <div class="IS-info-top">王三溥</div>
+                                <div class="IS-info-bottom">音乐人</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="IS-bottom">申请成为网易音乐人</div>
+                </div>
+                <div id="PA">
+                    <h3 id="PA-title">热门主播</h3>
+                    <div id="PA-content">
+                        <div class="PA-content-singers">
+                            <div class="PA-imgBox"><img class="PA-img" src="../IMG/陈粒.jpg"></div>
+                            <div class="PA-infoBox">
+                                <div class="PA-info-top">陈立</div>
+                                <div class="PA-info-bottom">心理学家、美食家陈立教授</div>
+                            </div>
+                        </div>
+                        <div class="PA-content-singers">
+                            <div class="PA-imgBox"><img class="PA-img" src="../IMG/刘维.jpg"></div>
+                            <div class="PA-infoBox">
+                                <div class="PA-info-top">刘维-Julius</div>
+                                <div class="PA-info-bottom">歌手、播客节目《维维道来》...</div>
+                            </div>
+                        </div>
+                        <div class="PA-content-singers">
+                            <div class="PA-imgBox"><img class="PA-img" src="../IMG/莫非定理.jpg"></div>
+                            <div class="PA-infoBox">
+                                <div class="PA-info-top">莫非定律MoreFeel</div>
+                                <div class="PA-info-bottom">
+                                    男女双人全创作独立乐团</div>
+                            </div>
+                        </div>
+                        <div class="PA-content-singers">
+                            <div class="PA-imgBox"><img class="PA-img" src="../IMG/碎嘴许美达.jpg"></div>
+                            <div class="PA-infoBox">
+                                <div class="PA-info-top">碎嘴许美达</div>
+                                <div class="PA-info-bottom">脱口秀网络红人</div>
+                            </div>
+                        </div>
+                        <div class="PA-content-singers">
+                            <div class="PA-imgBox"><img class="PA-img" src="../IMG/银临.jpg"></div>
+                            <div class="PA-infoBox">
+                                <div class="PA-info-top">银临Rachel</div>
+                                <div class="PA-info-bottom">古风音乐人</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <audio id="audio-app" autoplay></audio>
+    <iframe src="底部栏.html" frameborder="0" id="iframe"></iframe>
+  </body>
+</html>
+<script src="../JS/app.js"></script>
