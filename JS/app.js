@@ -1,3 +1,4 @@
+// $("#firstPage").load('../HTML/首页.html')
 //打开或关闭登录页面
 const loginBtn = document.querySelector("#log-A")
 const loginBox = document.querySelector("#login-in")
@@ -70,13 +71,6 @@ for(let i=0;i<points.length;i++){
 setInterval(() => {
     goNext();
 }, 5000);
-
-//sleep函数
-// async function sleep(t){
-//     return await  new Promise((resolve) =>{
-//          setTimeout(() =>resolve(),t)
-//     })
-// }
 
 //获取轮播图图片
 let bannerImg = document.querySelectorAll(".banner-img")
@@ -219,17 +213,15 @@ async function poRe() {
     const datas = data.result;
     let prImgs = document.querySelectorAll(".pr-content-img");
     let prContents = document.querySelectorAll(".pr-content-box")
-    console.log(datas);
     let pN = document.querySelectorAll(".nb");
     let imgA = document.querySelectorAll(".prImgA")
     let pA = document.querySelectorAll(".pr-contentBoxA")
-    console.log(pA[2]);
     for(let i=0;i<datas.length;i++){
         pA[i].id = datas[i].id;
         prImgs[i].setAttribute('src',datas[i].picUrl);
         imgA[i].id = datas[i].id;
         prContents[i].innerHTML = datas[i].name;
-        pN[i].innerHTML = datas[i].playCount + '万'
+        pN[i].innerHTML = datas[i].playCount ;
     }
 }
 poRe();
@@ -391,13 +383,14 @@ SearchInt.onfocus = function(){
 
 $("a").attr("href",'javascript:void(0)')
 let audio = document.querySelector("#audio-app")
-
+let songR = new Array();
 //搜索结果
 async function searchSong (){
     const res = await fetch('http://music.eleuu.com/search?limit=20&keywords='+SearchInt.value,{ 
         credentials: 'include',
         cookie : localStorage.getItem('cookie')
     });
+    songR.push(SearchInt.value);
     const data = await res.json();
     const datas = data.result.songs;
     console.log(datas);
@@ -456,12 +449,12 @@ async function searchSong (){
             getSongUrl(datas[i].id);
             navChange(datas[i].name,datas[i].artists[0].name,datas[i].id,datas[i].duration);
             (() =>{
-                barDoneMi = 0;  //将分针数字改为0
                 var time1 = setInterval(setTime,1000);
             })();
         })
     }
 }
+
 
 //获取歌曲详细
 async function songDetailed(id){
@@ -537,7 +530,6 @@ async function getSongUrl (id){
         cookie : localStorage.getItem('cookie')
     });
     const data = await res.json();
-    console.log(data.data[0].url);
     audio.setAttribute('src',data.data[0].url)
 }
 
@@ -571,6 +563,7 @@ function addSong(songname,singername,songId,alltime){
         let li = document.createElement("li");
         let div01 = document.createElement("div");
         let div01One = document.createElement("div");
+        div01One.className = 'sanJiao'
         let div02 = document.createElement("div");
         let div03 = document.createElement("div");
         let div04 = document.createElement("div");
@@ -627,7 +620,6 @@ function addSong(songname,singername,songId,alltime){
 }
 
 //定时器函数
-var barDoneMi = 0;
 let percentage = 0;
 function setTime(){
     let currentTime = audio.currentTime;
@@ -639,15 +631,12 @@ function setTime(){
     //进度条拖拽
     let icon = iframe.document.querySelector("#jindutiao-btn");
     let play = iframe.document.querySelector("#play");
+    barDoneMi = parseInt(currentTime/60);
     let appbottommiddle = iframe.document.querySelector("#app-bottom-middle");
     let isMove = false;
     let barDoneSe = parseInt(currentTime%60);
     if(barDoneSe <10){
         barDoneSe = '0' +barDoneSe ;
-    }
-    if( parseInt(currentTime) != 0 && parseInt(currentTime)%60 == 0){
-        barDoneSe = parseInt(currentTime % 60);
-        barDoneMi++;
     }
     barTime.innerHTML = '0'+barDoneMi+':'+barDoneSe+ '/'+ '0' + parseInt(allTime/60)+':'+parseInt(allTime%60)
     barDone.style.width = currentTime * barAll.offsetWidth / allTime + 'px'
@@ -678,9 +667,6 @@ function setTime(){
             isMove = false;
         }
     }
-    if(audio.currentTime == audio.duration){
-        
-    }
 }
 
 
@@ -696,6 +682,7 @@ function navChange(songname,singername,songId,alltime){
     let songTitle = iframe.document.querySelector("#song-title");
     let gecibox = iframe.document.querySelector("#playlist-geciBox");
     songTitle.innerHTML = songname;
+    SongName.setAttribute('data-id',songId);
     SongName.innerHTML = songname;
     singerName.innerHTML = singername;
     getLyric(gecibox,songId);
@@ -754,7 +741,6 @@ async function getSongListComment(id,limit,offset){
         cookie : localStorage.getItem('cookie')
     });
     const data = await res.json();
-    console.log(data.hotComments);
     let commentNum = document.querySelector("#commentNum span");
     commentNum.innerHTML = data.total;
     let hotC = data.hotComments;
@@ -839,7 +825,8 @@ async function madeSL(uid){
         cookie : localStorage.getItem('cookie')
     });
     const data = await res.json();
-    console.log(data.playlist);
+    let bigMMBoxRightThird = document.querySelector("#bigMMBox-right-third");
+    getPLD(bigMMBoxRightThird,6798710948)
     for(let i=0;i<data.playlist.length;i++){
         let li = document.createElement("li");
         li.style.padding = '6px 0 6px 20px';
@@ -869,8 +856,6 @@ async function madeSL(uid){
         li.appendChild(divRight)
         divRight.appendChild(divRightFirst)
         divRight.appendChild(divRightSecond)
-        let bigMMBoxRightThird = document.querySelector("#bigMMBox-right-third");
-        getPLD(bigMMBoxRightThird,6798710948)
         li.addEventListener('click',()=>{
         getPLD(bigMMBoxRightThird,li.id)
         })
@@ -914,7 +899,6 @@ async function getPLD(div,id){
         cookie : localStorage.getItem('cookie')
     });
     const data = await res.json();
-    console.log(data);
     let bigMMBoximgBox = document.querySelector("#bigMMBoximgBox img");
     bigMMBoximgBox.setAttribute('src',data.playlist.coverImgUrl)
     let nickImg = document.querySelector("#nick-img img");
@@ -955,6 +939,11 @@ async function getPLD(div,id){
         icon.style.height = '17px';
         icon.style.cursor = 'pointer';
         icon.style.float = 'right';
+        icon.className = 'beginS'
+        icon.setAttribute('data-id',tracks[i].id);
+        icon.setAttribute('data-name',tracks[i].name);
+        icon.setAttribute('data-singer',tracks[i].ar[0].name);
+        icon.setAttribute('data-duration',tracks[i].dt)
         icon.style.backgroundImage = 'url(../IMG/table.png)';
         icon.style.backgroundPosition = '0 -103px';
         beginBox.appendChild(begin)
@@ -988,6 +977,11 @@ async function getPLD(div,id){
         add.style.cursor = 'pointer';
         add.title = '添加至播放列表';
         add.style.float = 'left'
+        add.className = 'aSong'
+        add.setAttribute('data-id',tracks[i].id);
+        add.setAttribute('data-name',tracks[i].name);
+        add.setAttribute('data-singer',tracks[i].ar[0].name);
+        add.setAttribute('data-duration',tracks[i].dt)
         hidden.appendChild(add);
         let collect = document.createElement("a");
         collect.style.display = 'block';
@@ -1058,13 +1052,52 @@ async function getPLD(div,id){
         li.appendChild(SNaBox);
         li.appendChild(AN);
 
-        li.addEventListener('mouseover',()=>{
-            hidden.style.display = 'block'
+        
+    
+            li.addEventListener('mouseover',()=>{
+                hidden.style.display = 'block'
+            })
+            li.addEventListener('mouseout',()=>{
+                hidden.style.display = 'none'
+            })
+        } 
+        let aSongs = document.querySelectorAll(".aSong");
+        aSongs.forEach(aSong =>{
+            aSong.addEventListener('click',() =>{
+                let iframe = document.querySelector("#iframe").contentWindow;
+                if(iframe.document.getElementById(aSong.getAttribute('data-id'))){
+                    alert("已添加过该歌曲")
+                }else {
+                    let tip = iframe.document.querySelector("#tip");
+                    tip.innerHTML = '已添加至播放列表';
+                    tip.style.display = 'block';
+                    setTimeout(() => {
+                        tip.style.display = 'none';
+                    }, 1000);
+                    addSong(aSong.getAttribute('data-name'),aSong.getAttribute('data-singer'),aSong.getAttribute('data-id'),aSong.getAttribute('data-duration'))
+                }
+            })
         })
-        li.addEventListener('mouseout',()=>{
-            hidden.style.display = 'none'
+        let beginSongs = document.querySelectorAll(".beginS");
+        beginSongs.forEach(beginSong =>{
+            beginSong.addEventListener('click',() =>{
+                let iframe = document.querySelector("#iframe").contentWindow;
+                let img = iframe.document.querySelector("#app-bottom-img img");
+                let tip = iframe.document.querySelector("#tip");
+                tip.style.display = 'block';
+                tip.innerHTML = '已播放该歌曲'
+                setTimeout(() => {
+                    tip.style.display = 'none';
+                }, 1000);
+                getSongImg(img,beginSong.getAttribute('data-id'));
+                getSongUrl(beginSong.getAttribute('data-id'));
+                navChange(beginSong.getAttribute('data-name'),beginSong.getAttribute('data-singer'),beginSong.getAttribute('data-id'),beginSong.getAttribute('data-duration'));
+                (() =>{
+                    barDoneMi = 0;  //将分针数字改为0
+                    var time1 = setInterval(setTime,1000);
+                })();
+            })
         })
-    } 
 }
 //新碟上架点击跳转页面
 let prImgA = document.querySelectorAll(".prImgA");
@@ -1090,7 +1123,6 @@ prContentBoxA.forEach(prImg =>{
     })
 })
 
-
 //获取详细歌单(2)
 async function getPLDTwo(id){
     const res = await fetch(`http://redrock.udday.cn:2022/playlist/detail?cookie=${cookie}&id=`+id,{ 
@@ -1098,7 +1130,6 @@ async function getPLDTwo(id){
         cookie : localStorage.getItem('cookie')
     });
     const data = await res.json();
-    console.log(data);
     let liker = document.querySelectorAll("#involved-songList-content li img");
     for(let i=0;i<liker.length;i++){
         liker[i].setAttribute('src',data.playlist.subscribers[i].avatarUrl)
@@ -1146,8 +1177,13 @@ async function getPLDTwo(id){
         icon.style.height = '17px';
         icon.style.cursor = 'pointer';
         icon.style.float = 'right';
+        icon.className = 'beginS'
         icon.style.backgroundImage = 'url(../IMG/table.png)';
         icon.style.backgroundPosition = '0 -103px';
+        icon.setAttribute('data-id',tracks[i].id);
+        icon.setAttribute('data-name',tracks[i].name);
+        icon.setAttribute('data-singer',tracks[i].ar[0].name);
+        icon.setAttribute('data-duration',tracks[i].dt)
         beginBox.appendChild(begin)
         begin.appendChild(num);
         begin.appendChild(icon);
@@ -1179,6 +1215,11 @@ async function getPLDTwo(id){
         add.style.cursor = 'pointer';
         add.title = '添加至播放列表';
         add.style.float = 'left'
+        add.className = 'aSong'
+        add.setAttribute('data-id',tracks[i].id);
+        add.setAttribute('data-name',tracks[i].name);
+        add.setAttribute('data-singer',tracks[i].ar[0].name);
+        add.setAttribute('data-duration',tracks[i].dt)
         hidden.appendChild(add);
         let collect = document.createElement("a");
         collect.style.display = 'block';
@@ -1261,6 +1302,42 @@ async function getPLDTwo(id){
             hidden.style.display = 'none'
         })
     } 
+    let aSongs = document.querySelectorAll(".aSong");
+    aSongs.forEach(aSong =>{
+        aSong.addEventListener('click',() =>{
+            let iframe = document.querySelector("#iframe").contentWindow;
+            if(iframe.document.getElementById(aSong.getAttribute('data-id'))){
+                alert("已添加过该歌曲")
+            }else {
+                let tip = iframe.document.querySelector("#tip");
+                tip.innerHTML = '已添加至播放列表';
+                tip.style.display = 'block';
+                setTimeout(() => {
+                    tip.style.display = 'none';
+                }, 1000);
+                addSong(aSong.getAttribute('data-name'),aSong.getAttribute('data-singer'),aSong.getAttribute('data-id'),aSong.getAttribute('data-duration'))
+            }
+        })
+    })
+    let beginSongs = document.querySelectorAll(".beginS");
+    beginSongs.forEach(beginSong =>{
+        beginSong.addEventListener('click',() =>{
+            let iframe = document.querySelector("#iframe").contentWindow;
+            let img = iframe.document.querySelector("#app-bottom-img img");
+            let tip = iframe.document.querySelector("#tip");
+            tip.style.display = 'block';
+            tip.innerHTML = '已播放该歌曲'
+            setTimeout(() => {
+                tip.style.display = 'none';
+            }, 1000);
+            getSongImg(img,beginSong.getAttribute('data-id'));
+            getSongUrl(beginSong.getAttribute('data-id'));
+            navChange(beginSong.getAttribute('data-name'),beginSong.getAttribute('data-singer'),beginSong.getAttribute('data-id'),beginSong.getAttribute('data-duration'));
+            (() =>{
+                var time1 = setInterval(setTime,1000);
+            })();
+        })
+    })
     let loginA = document.createElement("a");
     if(cookie != null){
         loginA.innerHTML = '更多内容见客户端'
@@ -1324,7 +1401,6 @@ playlistBtn.addEventListener('click',()=>{
 async function getAPL(cat,offset){
     const res = await fetch(`http://music.eleuu.com/top/playlist?cat=${cat}&offset=${offset}`)
     const json = await res.json();
-    console.log(json);
     let aPLcontent = document.querySelector("#aPL-content");
     for(let i=0;i<json.playlists.length;i++){
         let li = document.createElement("li");
@@ -1418,7 +1494,6 @@ RankFBtn.addEventListener("click",()=>{
 async function rankListDet(){
     const res = await fetch('http://music.eleuu.com/toplist/detail');
     const json = await res.json();
-    console.log(json);
     let YTBIImgs = document.querySelectorAll(".YTBIImg");
     let GMBIImgs= document.querySelectorAll(".GMBIImg");
     let topWords = document.querySelectorAll(".top");
@@ -1459,7 +1534,6 @@ async function GetRankListDet(id){
         cookie : localStorage.getItem('cookie')
     });
     const data = await res.json();
-    console.log(data);
     let bigMMBoximgBox = document.querySelector("#bigMMBoximgBox img");
     bigMMBoximgBox.setAttribute('src',data.playlist.coverImgUrl)
     let topWords = document.querySelector("#bigMMBoxrightBox-one");
@@ -1626,12 +1700,25 @@ async function GetSingers(type,area,initial){
 }
 
 //列表点击播放，歌曲切换
+let songIdArr = new Array();
+let newArr = [];
+let indexT = 0;
 function SongList(){
     let iframe = document.querySelector("#iframe").contentWindow;
     let ul = iframe.document.querySelector("#songlistUl");
+    let songName = iframe.document.querySelector("#songName");
+    let NextA = iframe.document.querySelector("#NextA")
+    let ProA = iframe.document.querySelector("#ProA");
     if(ul.hasChildNodes() == true){
+        let sanJiaos = iframe.document.querySelectorAll(".sanJiao");
         let songsA = iframe.document.querySelectorAll(".m");
         for(let i=0;i<songsA.length;i++){
+            songIdArr.push(songsA[i].id)
+            for(let i=0;i<songIdArr.length;i++){
+                if(newArr.indexOf(songIdArr[i]) == -1){
+                    newArr.push(songIdArr[i]);
+                }
+            }
          songsA[i].addEventListener('click',() =>{
             ( () =>{
                 let img = iframe.document.querySelector("#app-bottom-img img");
@@ -1641,16 +1728,16 @@ function SongList(){
                 getSongImg(img,songsA[i].id);
                 getSongUrl(songsA[i].id);
                 navChange(dataSongName,dataSingerName,songsA[i].id,dataAllTime)
-                barDoneMi = 0;  //将分针数字改为0
                 var time2 = setInterval(setTime,1000);
             })();
          })
     }  
+    NextA.addEventListener('click',() =>{
+        console.log(indexT);
+    })
 }
 }
-let time =setInterval(() => {
-        SongList();
-    }, 1000);
+let time =setInterval(SongList, 2000);
 
 //退出登录
 if(document.querySelector("#userImg")){
@@ -1684,6 +1771,9 @@ function logOut(){
 if(localStorage.length > 0){
     getVipInfo()
     getLvInfo()
+    getAttentionNum();
+    getFollowerNum();
+    getDSNum();
     let rl = document.querySelector("#rl");
     let bacS = document.querySelector("#bac-second-bigBox-right");
     bacS.removeChild(rl)
@@ -1830,7 +1920,6 @@ async function getLvInfo(){
     let cookie = localStorage.getItem("cookie");
     const res = await fetch(`http://redrock.udday.cn:2022/user/level?cookie=${cookie}`);
     const json = await res.json();
-    console.log(json);
     localStorage.setItem("Lv",json.data.level)
 }
 
@@ -1841,7 +1930,7 @@ async function getAttentionNum(){
     const json = await res.json();
     localStorage.setItem('AttentionNum',json.follow.length)
 }
-getAttentionNum();
+
 
 //获取粉丝数量
 async function getFollowerNum(){
@@ -1850,7 +1939,7 @@ async function getFollowerNum(){
     const json = await res.json();
     localStorage.setItem('followerNum',json.followeds.length)
 }
-getFollowerNum();
+
 
 //获取用户动态数量
 async function getDSNum(){
@@ -1859,7 +1948,7 @@ async function getDSNum(){
     const json = await res.json();
     localStorage.setItem('eventNum',json.events.length)
 }
-getDSNum();
+
 
 //nav颜色变化
 let ems = document.querySelectorAll("#topbox-nav em");
@@ -1913,24 +2002,67 @@ nav1.addEventListener('click',() =>{
     nav1.style.backgroundColor = '#000000'
     nav2.style.backgroundColor = '#242424'
 })
-    
+
+//默认搜索关键词
+async function getDSTerms(){
+    const res = await fetch(`http://music.eleuu.com/search/hot/detail`);
+    const json = await res.json();
+    // localStorage.setItem('eventNum',json.events.length)
+}
+getDSTerms();
+
+//最下部榜单
+async function GetRankList(){
+    const res = await fetch(`http://music.eleuu.com/toplist/detail`,{ 
+        credentials: 'include',
+        cookie : localStorage.getItem('cookie')
+    });
+    const data = await res.json();
+    let aOne = document.querySelectorAll("#ol-one a");
+    let aTwo = document.querySelectorAll("#ol-two a");
+    let aThree = document.querySelectorAll("#ol-three a");
+    RankListContent(data.list[0].id,aOne)
+    RankListContent(data.list[1].id,aTwo)
+    RankListContent(data.list[2].id,aThree)
+    let fmHiddens = document.querySelectorAll(".fm-hidden");
+    let lis = document.querySelectorAll("ol li");
+    for(let i=0;i<fmHiddens.length;i++){
+        fmHiddens[i].setAttribute('style',`float: right;width: 82px;height:19px;position:absolute;top:7px;right:0;display:none;`)
+        let aO = document.createElement("a");
+        let aTwo = document.createElement("a")
+        let aThree = document.createElement("a")
+        fmHiddens[i].appendChild(aO)
+        fmHiddens[i].appendChild(aTwo)
+        fmHiddens[i].appendChild(aThree)
+        aO.setAttribute('style',`display:block;float: left;width: 17px;height: 17px;margin-right: 10px;background:url(../IMG/index.png);background-position:-267px -268px;cursor:pointer;`)
+        aTwo.setAttribute('style',`display:block;float: left;width: 17px;height: 17px;margin-right: 10px;background:url(../IMG/icon.png);background-position: 0 -700px;cursor:pointer;`)
+        aThree.setAttribute('style',`display:block;float: left;width: 17px;height: 17px;margin-right: 10px;background:url(../IMG/index.png);background-position: -297px -268px;cursor:pointer;`)
+        aO.title = '播放'
+        aTwo.title = '添加至播放列表'
+        aThree.title = '收藏'
+        lis[i].addEventListener('mouseover',() =>{
+            fmHiddens[i].setAttribute('style',`float: right;width: 82px;height:19px;position:absolute;top:7px;right:0;display:block;`)
+        })
+        lis[i].addEventListener('mouseout',() =>{
+            fmHiddens[i].setAttribute('style',`float: right;width: 82px;height:19px;position:absolute;top:7px;right:0;display:none;`)
+        })
+    }   
+}
+GetRankList()
+
+async function RankListContent(id,a,num){
+    const res = await fetch(`http://redrock.udday.cn:2022/playlist/detail?cookie=${cookie}&id=`+id,{ 
+        credentials: 'include',
+        cookie : localStorage.getItem('cookie')
+    });
+    const json = await res.json();
+    for(let i=0;i<a.length;i++){
+        a[i].innerHTML = json.playlist.tracks[i].name;
+    }
+}
 
 
-// let iframe = document.querySelector("#iframe").contentWindow;
-// let img = iframe.document.querySelector("#app-bottom-img img");
-// let tip = iframe.document.querySelector("#tip");
-// tip.style.display = 'block';
-// tip.innerHTML = '已播放该歌曲'
-// setTimeout(() => {
-//     tip.style.display = 'none';
-// }, 1000);
-// getSongImg(img,datas[i].id);
-// getSongUrl(datas[i].id);
-// navChange(datas[i].name,datas[i].artists[0].name,datas[i].id,datas[i].duration);
-// (() =>{
-//     barDoneMi = 0;  //将分针数字改为0
-//     var time1 = setInterval(setTime,1000);
-// })();
+
 
 
 
